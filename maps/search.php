@@ -1,4 +1,4 @@
-<?
+<?php
     $query = (isset($_POST["query"]) && strlen($_POST["query"]) <= 32) ? $_POST["query"] : "";
     $compressed = (isset($_GET["compressed"]) && $_GET["compressed"] == 1) ? true : false;
 ?>
@@ -38,7 +38,7 @@
                 </thead>
 
                 <tbody>
-                    <?
+                    <?php
                         $directory = new DirectoryIterator($_SERVER["DOCUMENT_ROOT"] . "/fastdl/maps");
 
                         foreach ($directory as $file) {

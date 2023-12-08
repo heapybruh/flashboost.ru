@@ -1,4 +1,4 @@
-<?
+<?php
     $query = (isset($_POST["query"]) && strlen($_POST["query"]) <= 48) ? $_POST["query"] : "";
     $region = (isset($_GET["region"]) && in_array($_GET["region"], ["eu", "na"])) ? $_GET["region"] : header("Location: /");;
 ?>
@@ -38,7 +38,7 @@
                 </thead>
 
                 <tbody>
-                    <?
+                    <?php
                         $files = array();
 
                         $directory = new DirectoryIterator($_SERVER["DOCUMENT_ROOT"] . "/demos/" . $region);
