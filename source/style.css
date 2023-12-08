@@ -1,0 +1,43 @@
+html, body {
+    height: 100vh;
+    user-select: none;
+}
+
+.table, form {
+    width: 512px;
+}
+
+.upper {
+    animation: upper-animation 0.5s ease-in-out;
+}
+
+.bottom {
+    width: 256px;
+    animation: bottom-animation 0.5s ease-in-out;
+}
+
+#description {
+    opacity: 0;
+}
+
+@keyframes upper-animation {
+    0% { 
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
+
+@keyframes bottom-animation {
+    0% { 
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
