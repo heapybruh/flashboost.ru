@@ -7,7 +7,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
         <title>ClassicCounter / Maps</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -32,8 +32,8 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Filename</th>
-                        <th scope="col">Size</th>
+                        <th scope="col" style="width: 440px">Filename</th>
+                        <th scope="col" style="width: 72px">Size</th>
                     </tr>
                 </thead>
 
@@ -42,8 +42,7 @@
                         $directory = new DirectoryIterator($_SERVER["DOCUMENT_ROOT"] . "/fastdl/maps");
 
                         foreach ($directory as $file) {
-                            if($file->isDot() 
-                                || !str_contains($file->getFilename(), $query) 
+                            if(!str_contains($file->getFilename(), $query) 
                                 || !$file->getSize() 
                                 || ((
                                     $compressed && ($file->getExtension() != "bz2") 
