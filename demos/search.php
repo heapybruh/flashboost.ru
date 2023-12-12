@@ -55,7 +55,7 @@
                         });
 
                         foreach ($files as $file) {
-                            if(!str_contains($file->getFilename(), $query) 
+                            if (!str_contains($file->getFilename(), $query) 
                                 || !$file->getSize()
                                 || !in_array($file->getExtension(), ["dem", "bz2"])
                             )

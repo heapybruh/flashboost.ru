@@ -39,10 +39,17 @@
 
                 <tbody>
                     <?php
-                        $directory = new DirectoryIterator($_SERVER["DOCUMENT_ROOT"] . "/fastdl/maps");
+                        $files = array();
+                        $directory = new RecursiveDirectoryIterator($_SERVER["DOCUMENT_ROOT"] . "/fastdl/maps/");
 
-                        foreach ($directory as $file) {
-                            if(!str_contains($file->getFilename(), $query) 
+                        foreach ($directory as $file)
+                            if ($file->isFile())
+                                $files[] = $file;
+
+                        sort($files, SORT_NATURAL);
+
+                        foreach ($files as $file) {
+                            if (!str_contains($file->getFilename(), $query) 
                                 || !$file->getSize() 
                                 || ((
                                     $compressed && ($file->getExtension() != "bz2") 
