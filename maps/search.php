@@ -24,7 +24,7 @@
                 <a href="/" class="btn btn-dark">Back</a>
 
                 <form class="d-flex flex-row" method="post">
-                    <input type="text" class="form-control mx-2" name="query" placeholder="de_example.bsp" maxlength="32">
+                    <input type="text" class="form-control mx-2" name="query" placeholder="de_example.bsp" maxlength="32" value="<?php echo $query; ?>">
                     <button type="submit" class="btn btn-dark">Search</button>
                 </form>
             </div>
