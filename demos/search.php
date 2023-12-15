@@ -1,6 +1,6 @@
 <?php
     $query = (isset($_POST["query"]) && strlen($_POST["query"]) <= 48) ? $_POST["query"] : "";
-    $region = (isset($_GET["region"]) && in_array($_GET["region"], ["eu", "na"])) ? $_GET["region"] : header("Location: /");;
+    $region = (isset($_GET["region"]) && in_array($_GET["region"], ["eu", "na"])) ? $_GET["region"] : header("Location: /");
 ?>
 
 <!DOCTYPE html>
